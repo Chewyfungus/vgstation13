@@ -284,6 +284,7 @@ Pipelines + Other Objects -> Pipe network
 	if (istype(reference, /obj/machinery/atmospherics/pipe))  //If it's a pipe (and therefore part of a pipeline)
 		var/obj/machinery/atmospherics/pipe/P = reference
 		P.parent.add_to_queue(P) ////Add it to a list of pipes (in the pipeline) that need to call update_icon()
+		P.update_icon_dup_flag = TRUE
 	else
 		update_icon()
 
